@@ -14,6 +14,8 @@
 
                 <% if (!accepted && (isAdmin || isQuizAuthor)) { %>
 
+                    <% tip.author ? tip.author.username: "Anonymus" %>
+
                     <a href="/quizzes/<%= quizId %>/tips/<%= tip.id %>/accept?_method=PUT">
                         <button>Accept</button>
                     </a>
