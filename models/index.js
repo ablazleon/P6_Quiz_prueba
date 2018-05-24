@@ -10,10 +10,6 @@ const Sequelize = require('sequelize');
 //    DATABASE_URL = postgres://user:passwd@host:port/database
 
 const url = process.env.DATABASE_URL || "sqlite:quizzes.sqlite";
-<<<<<<< HEAD
-//quizzes.sqlite
-=======
->>>>>>> practica7
 
 const sequelize = new Sequelize(url);
 
@@ -41,9 +37,9 @@ quiz.hasMany(tip);
 user.hasMany(quiz, {foreignKey: 'authorId'});
 quiz.belongsTo(user, {as: 'author', foreignKey: 'authorId'});
 
-// Relation 1-to-N between Tip and Quiz:
-tip.hasMany(quiz, {foreignKey: 'authorId'});
-quiz.belongsTo(tip, {as: 'author', foreignKey: 'authorId'});
+// Relation 1-to-N between Tip and User:
+tip.hasMany(user, {foreignKey: 'authorId'});
+user.belongsTo(tip, {as: 'author', foreignKey: 'authorId'});
 
 
 module.exports = sequelize;
