@@ -2,6 +2,10 @@ node_modules
 .DS_Store
 quiz.sqlite
 .env
+<<<<<<< HEAD
 .idea/misc.xml
 .idea/workspace.xml
 .idea/runConfigurations/bin_www.xml
+=======
+.idea
+>>>>>>> practica7

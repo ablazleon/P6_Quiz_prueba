@@ -1,4 +1,8 @@
 
+<div class="right">
+    <small> (by <%= quiz.author ? quiz.author.username : "Anonymous" %>) </small>
+</div>
+
 <h1>
     Play:
 </h1>
@@ -15,4 +19,20 @@
     </div>
 </form>
 
-<a href="/quizzes"><button>Go back</button></a>
+
+<h1>
+    Tips:
+</h1>
+
+<% if (session.user) { %>
+    <% include ../tips/new %>
+<% } %>
+
+<% var tips = quiz.tips; %>
+<% var quizId = quiz.id; %>
+<% var quizAuthorId = quiz.authorId; %>
+
+<% include ../tips/index %>
+
+
+<a href="/goback"><button>Go back</button></a>

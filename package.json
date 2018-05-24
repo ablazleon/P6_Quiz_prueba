@@ -5,28 +5,46 @@
   "scripts": {
     "start": "heroku local:start",
     "super": "supervisor ./bin/www",
-    "start_old": "node ./bin/www"
+    "start_old": "node ./bin/www",
+    "migrate_local": "sequelize db:migrate --url sqlite://$(pwd)/quizzes.sqlite",
+    "seed_local": "sequelize db:seed:all --url sqlite://$(pwd)/quizzes.sqlite",
+    "open_heroku": "heroku open",
+    "migrate_heroku": "heroku run ./node_modules/.bin/sequelize db:migrate --url \\$DATABASE_URL",
+    "seed_heroku": "heroku run ./node_modules/.bin/sequelize db:seed:all --url \\$DATABASE_URL",
+    "reset_heroku": "heroku pg:reset DATABASE",
+    "mon_heroku": "heroku maintenance:on",
+    "moff_heroku": "heroku maintenance:off"
   },
   "engines": {
     "node": "8.9.1",
     "npm": "5.6.0"
   },
   "dependencies": {
-    "body-parser": "~1.18.2",
-    "connect-session-sequelize": "^5.0.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "ejs": "~2.5.7",
-    "express": "~4.15.5",
+    "body-parser": "^1.18.3",
+    "connect-session-sequelize": "^5.2.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.9",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
     "express-flash": "0.0.2",
+    "express-generator": "^4.16.0",
     "express-partials": "^0.3.0",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
+<<<<<<< HEAD
     "morgan": "~1.9.0",
     "pg": "7.4.0",
     "sequelize": "^4.37.5",
     "serve-favicon": "~2.4.5",
     "sqlite": "^2.9.2",
+=======
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0",
+    "pg": "^7.4.3",
+    "sequelize": "^4.37.9",
+    "sequelize-cli": "^4.0.0",
+    "serve-favicon": "^2.5.0",
+>>>>>>> practica7
     "supervisor": "^0.12.0"
   },
   "devDependencies": {
