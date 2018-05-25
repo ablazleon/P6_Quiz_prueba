@@ -1,0 +1,21 @@
+
+
+<h1>
+    Edit tip:
+</h1>
+
+<form method="post" action="/quizzes/<%= quiz.id %>/tips/<%=tip.id %> ?_method=PUT" >
+    <% include _form.ejs %>
+</form>
+
+<div class="wideRow">
+    <label for="text"  class="itemNarrow">Tip to be edited:</label>
+    <input type="text" class="itemWide" id="preg" name="text" value="<%= quiz.question %>" placeholder="Question" autocomplete="off"/>
+</div>
+
+<!--  sólo quiere una cajita -->
+
+<br/>
+<a href="/goback"><button type="button">Cancel</button></a>
+
+<input type="submit" value="Save">
