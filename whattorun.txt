@@ -1,1 +1,2 @@
-npm install body-parser connect-session-sequelize debug ejs express express-flash express-generator express-partials express-session method-override morgan pg sequelize serve-favicon sqlite3 supervisor cookie-parser multer --save
+npm install body-parser connect-session-sequelize debug ejs express express-flash express-generator express-partials --save
+npm install express-session method-override morgan pg sequelize serve-favicon sqlite3 supervisor cookie-parser multer --save
